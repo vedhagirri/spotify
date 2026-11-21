@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Clone</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <nav class="main-nav">
+        <a class="nav-link active" href="#" aria-label="Home">
+          <span class="nav-icon home-icon"></span><span>Home</span>
+        </a>
+        <a class="nav-link" href="#" aria-label="Search">
+          <span class="nav-icon search-icon"></span><span>Search</span>
+        </a>
+      </nav>
+
+      <section class="library">
+        <header class="library-header">
+          <button class="library-title" type="button">
+            <span class="library-icon"></span>
+            <span>Your Library</span>
+          </button>
+          <button class="icon-button add-button" type="button" aria-label="Create playlist">+</button>
+        </header>
+        <div class="library-filters">
+          <button type="button">Playlists</button>
+          <button type="button">Artists</button>
+        </div>
+        <div class="library-list">
+          <button class="library-item" type="button">
+            <div class="liked-cover"><span>♥</span></div>
+            <div><strong>Liked Songs</strong><small>Playlist · 11 songs</small></div>
+          </button>
+        </div>
+      </section>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="history-buttons">
+          <button type="button" aria-label="Go back">‹</button>
+          <button type="button" aria-label="Go forward">›</button>
+        </div>
+        <div class="profile">
+          <button class="install-button" type="button">
+            <span>↓</span> Install App
+          </button>
+          <button class="notification-button" type="button" aria-label="Notifications">●</button>
+          <button class="avatar" type="button" aria-label="Profile">S</button>
+        </div>
+      </header>
+
+      <div class="content-scroll">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">FEATURED PLAYLIST</p>
+            <h1>Tamil Hits</h1>
+            <p>The biggest Tamil tracks, all in one place.</p>
+            <div class="hero-actions">
+              <button class="hero-play" id="heroPlay" type="button" aria-label="Play Tamil Hits">▶</button>
+              <button class="hero-more" type="button" aria-label="More options">•••</button>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="hero-art-ring ring-one"></div>
+            <div class="hero-art-ring ring-two"></div>
+            <span>TAMIL</span>
+          </div>
+        </section>
+
+        <section class="tracks-section">
+          <div class="section-heading">
+            <div>
+              <p class="made-for">Made for you</p>
+              <h2>Your mix</h2>
+            </div>
+            <button type="button">Show all</button>
+          </div>
+          <div class="track-grid" id="trackGrid"></div>
+        </section>
+
+        <section class="song-table-section">
+          <div class="table-header">
+            <span>#</span><span>Title</span><span>Album</span><span>◷</span>
+          </div>
+          <div id="songTable" class="song-table"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="player">
+      <div class="now-playing">
+        <div class="now-cover" id="nowCover"><span id="nowInitial">H</span></div>
+        <div class="now-meta">
+          <strong id="nowTitle">Hey Minnale</strong>
+          <span id="nowArtist">Tamil Hits</span>
+        </div>
+        <button class="heart-button" id="heartButton" type="button" aria-label="Save to your library">♡</button>
+      </div>
+
+      <div class="player-center">
+        <div class="transport">
+          <button class="transport-small" id="shuffleButton" type="button" aria-label="Shuffle">↝</button>
+          <button class="transport-small" id="prevButton" type="button" aria-label="Previous">|‹</button>
+          <button class="play-button" id="playButton" type="button" aria-label="Play">▶</button>
+          <button class="transport-small" id="nextButton" type="button" aria-label="Next">›|</button>
+          <button class="transport-small" id="repeatButton" type="button" aria-label="Repeat">↻</button>
+        </div>
+        <div class="progress-row">
+          <span id="currentTime">0:00</span>
+          <input id="progressBar" class="progress" type="range" min="0" max="100" value="0" aria-label="Song progress">
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+
+      <div class="player-tools">
+        <button type="button" aria-label="Now playing view">▧</button>
+        <button type="button" aria-label="Queue">☰</button>
+        <button type="button" aria-label="Connect to a device">▯</button>
+        <span class="volume-icon">◖</span>
+        <input id="volumeBar" class="volume" type="range" min="0" max="1" step="0.01" value="0.7" aria-label="Volume">
+        <button type="button" aria-label="Full screen">⛶</button>
+      </div>
+    </footer>
+  </div>
+
+  <audio id="audio"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
